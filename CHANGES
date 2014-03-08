@@ -1,5 +1,7 @@
 change log:
+3/7/2014
 checked out on laptop, working on main and gameengine
 added gameengine to main, fixed spacing in main
 added a .vimrc file, hopefully this helps with vim and python
 created change log, moved from README
+

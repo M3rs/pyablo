@@ -4,4 +4,7 @@ description:
 
 A game written in Python using the Pygame library, inspired by Blizzard's Diablo.
 
+notes:
 
+
+Includes a .vimrc file for editing
