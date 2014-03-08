@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import *
 
-class GameEngine(object):
+class GameEngine():
     """ Manages a stack of GameStates, runs game """
     def __init__(self):
         self.running = True
@@ -28,7 +28,8 @@ class GameEngine(object):
 class GameState(object):
     """ Base class for all game states """
     def __init__(self):
-        pass
+        print('... GameState created')
+        #pass
 
     def render(self, screen):
         raise NotImplementedError
@@ -39,10 +40,11 @@ class GameState(object):
     def handle_events(self, events):
         raise NotImplementedError
 
-class TitleState(object):
+class TitleState(GameState):
     """ Main Title """
     def __init__(self):
-        pass    
+        super(GameState, self).__init__()
+        print('... TitleState created')
 
     def render(self, screen):
         raise NotImplementedError
@@ -52,17 +54,17 @@ class TitleState(object):
 
     def handle_events(self, events):
         """ Pressing any key moves to Menu State """
-        for event in pygame.event.get():
+        for event in events:
             if event.type == KEYDOWN:
                 self.engine.running = False
-            else:
+                print('moving to menu state')
                 self.engine.switch_state(MenuState())
-        
 
-class MenuState(object):
+class MenuState(GameState):
     """ Main Menu """
     def __init__(self):
-        pass    
+        super(GameState, self).__init__()
+        print('...MenuState created')
 
     def render(self, screen):
         raise NotImplementedError
@@ -71,4 +73,4 @@ class MenuState(object):
         raise NotImplementedError
 
     def handle_events(self, events):
-        raise NotImplementedError
+        self.engine.running = False
