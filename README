@@ -4,7 +4,4 @@ description:
 
 A game written in Python using the Pygame library, inspired by Blizzard's Diablo.
 
-change log:
-checked out on laptop, working on main and gameengine
-added gameengine to main, fixed spacing in main
-added a .vimrc file, hopefully this helps with vim and python
+
