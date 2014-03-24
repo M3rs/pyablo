@@ -16,7 +16,7 @@ class GameEngine():
     def switch_state(self, state):
         """ Changes the top state to state """
         self.states[-1] = state
-        self.states[-1] = self
+        self.states[-1].engine = self
 
     def pop_state(self):
         """ Pops the last state off """
